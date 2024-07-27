@@ -10,4 +10,5 @@ public class Main {
 }
 
 // Fix dragging in mouse listener
+// have fixed dragging for now but it might be prone to errors
 //add gamepad stuff

@@ -6,7 +6,7 @@ public class MouseListener {
     private static MouseListener instance;
     private double scrollX,scrollY;
     private double xPos,yPos,lastX,lastY;
-    private boolean mouseButtonPressed[] = new boolean[3];
+    private boolean[] mouseButtonPressed = new boolean[3];
     private boolean isDragging;
 
     private MouseListener(){
@@ -16,10 +16,13 @@ public class MouseListener {
         this.scrollY = 0;
         this.lastX = 0;
         this.lastY = 0;
-       // this.isDragging =  (get().mouseButtonPressed[0]) || (get().mouseButtonPressed[1]) || (get().mouseButtonPressed[2]);
+
+        if (MouseListener.instance == null) { this.isDragging = false;}
+        else{
+       this.isDragging =  (get().mouseButtonPressed[0]) || (get().mouseButtonPressed[1]) || (get().mouseButtonPressed[2]);}
     }
 
-    /* FIX DRAGGINGGGGGGGGGGGGGGGGGGGGG */
+
 
     public static MouseListener get(){
         if (MouseListener.instance == null){
